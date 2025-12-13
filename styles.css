@@ -1,0 +1,235 @@
+/* إعدادات عامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #F0F0F0;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* الهيدر */
+header {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #FF6347;
+}
+
+/* Hero */
+.hero {
+  background-color: #FF6347;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 10px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #0b6fb2;
+}
+
+/* الأقسام */
+section {
+  padding: 60px 0;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+section h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1E90FF;
+}
+
+/* About */
+.about img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+}
+
+/* Projects */
+.projects .project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  padding: 15px;
+
+  /* الخلفية */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #999; /* يظهر كصندوق رمادي قبل ظهور الصورة */
+
+  border: 1px solid #ccc; /* يظهر المربع */
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.project-card .text h3,
+.project-card .text p {
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Skills */
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.skills ul li {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Contact */
+.contact form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input, 
+.contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  background-color: #1E90FF;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background-color: #0b6fb2;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .socials {
+  margin-top: 10px;
+}
+
+footer .socials a {
+  color: #FF6347;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+footer .socials a:hover {
+  color: #1E90FF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav ul {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .projects .project-cards {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .skills ul {
+      flex-direction: column;
+      gap: 15px;
+  }
+}

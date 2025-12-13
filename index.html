@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الشخصي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <h1>ابراهيم المجالي
+              
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عني</a></li>
+                    <li><a href="#projects">المشاريع</a></li>
+                    <li><a href="#skills">المهارات</a></li>
+                    <li><a href="#contact">تواصل</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>مرحبا بكم في موقعي الشخصي</h2>
+            <p>أنا مطور ويب، أبتكر مواقع رائعة وتجارب مستخدم مذهلة.</p>
+            <a href="#contact" class="btn">تواصل معي</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>عنّي</h2>
+            <img src="images/profile.jpg" alt="صورة شخصية">
+            <p>أنا مطور ويب متخصص في تصميم وتطوير مواقع تفاعلية وجذابة. أحب التعلم وتجربة تقنيات جديدة.</p>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>مشاريعي</h2>
+            <div class="project-cards">
+                <div class="project-card" style="background-image: url('images/project1.jpg');">
+                    <div class="text">
+                        <h3>مشروع 1</h3>
+                        <p>وصف قصير للمشروع الأول</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="background-image: url('images/project2.jpg');">
+                    <div class="text">
+                        <h3>مشروع 2</h3>
+                        <p>وصف قصير للمشروع الثاني</p>
+                    </div>
+                </div>
+
+                <div class="project-card" style="background-image: url('images/project3.jpg');">
+                    <div class="text">
+                        <h3>مشروع 3</h3>
+                        <p>وصف قصير للمشروع الثالث</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>المهارات</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>تواصل معي</h2>
+            <form>
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 موقعي الشخصي. جميع الحقوق محفوظة.</p>
+            <div class="socials">
+                <a href="#">فيسبوك</a>
+                <a href="#">تويتر</a>
+                <a href="#">لينكدإن</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
