@@ -1,128 +1,324 @@
-WORKFLOW NOTES
-================
+1️⃣ Header – Analysis
 
-Component 1: CARD
------------------
-1. Analysis
-- Main container: `.card` wrapping the entire card.
-- Child elements: image placeholder, title, supporting text, tag chips, primary and secondary buttons.
-- Content: title text, body text, button labels.
-- Layout: vertical stacking, spacing between sections, alignment of buttons in a row.
-- Decoration: background color, border radius, drop shadow, hover states, tag chip colors.
+Main Container:
 
-2. Planning
-- HTML elements: use `section.card-component` as a semantic region; inside use `article.card` for the card itself.
-- Groupings: header group (`.card-media` for the image), body group (`.card-body` for title + text), footer group (`.card-footer` for tags and actions).
-- Layout method: Flexbox inside the footer to arrange buttons and tags; normal block flow for vertical stacking in the card.
+Header section يمثل أعلى الصفحة
 
-3. Chunking
-- Parent container: `.card-component` (component wrapper) and `.card` (visual card box).
-- Sub-sections: `.card-media`, `.card-body`, `.card-footer`.
-- Reusable blocks: `.badge` for small label chips, `.btn` for buttons.
+Child Elements:
 
-4. Prompting (Code Writing)
-- Use semantic HTML: `section` with `h2` for the component heading, `article` for the card.
-- Add meaningful class names like `.card-title`, `.card-text`, `.card-actions`.
-- Style with clean CSS using Flexbox for footer alignment, padding for spacing, and consistent typography.
+Brand name: FC Barcelona
 
-5. Iterating
-- After first version, increased card padding and line-height for better readability.
-- Adjusted button spacing and used a shared `.btn` class for consistency.
-- Tweaked shadow and border radius to make the card feel more polished and professional.
+Navigation links:
 
+Features
 
-Component 2: SIDEBAR
---------------------
-1. Analysis
-- Main container: `aside.sidebar` containing navigation and info.
-- Child elements: logo/title, navigation list with links, section heading, small summary text, and a call-to-action button.
-- Content: app name, nav labels, descriptive text.
-- Layout: vertical stack of logo, nav, info block, and button.
-- Decoration: background color panel, divider lines, hover states for links.
+Details
 
-2. Planning
-- HTML elements: use `aside` for semantic sidebar, `nav` for navigation, `ul`/`li` for menu items, and `a` for links.
-- Groupings: `.sidebar-header` for title, `.sidebar-nav` for the main menu, `.sidebar-footer` for help text and action button.
-- Layout method: Flexbox column layout for the sidebar; spacing via `gap` and margins.
+Price
 
-3. Chunking
-- Parent container: `.sidebar-component` wrapping `aside.sidebar`.
-- Sub-sections: `.sidebar-header`, `.sidebar-nav`, `.sidebar-footer`.
-- Reusable blocks: `.nav-link` style applied to all sidebar links.
+Contact
 
-4. Prompting (Code Writing)
-- Use headings (`h2`, `h3`) to label the sidebar and navigation section.
-- Use clear class names like `.sidebar-title`, `.sidebar-menu`, `.nav-link`.
-- Style with Flexbox to push footer to the bottom and maintain even spacing.
+Content vs Layout vs Decoration:
 
-5. Iterating
-- Improved vertical rhythm by using `gap` instead of stacking many margins.
-- Lightened link hover background and added left border highlight for active state.
-- Normalized padding on the sidebar so content aligns visually with the main content area.
+Content: اسم نادي برشلونة وروابط الأقسام
 
+Layout: ترتيب أفقي (اسم النادي على اليسار، الروابط على اليمين)
 
-Component 3: FORM
------------------
-1. Analysis
-- Main container: `section.form-component` with `.form-card` for visual form box.
-- Child elements: headings, input fields with labels, helper text, and a submit button.
-- Content: field labels, placeholder text, helper messages, and button label.
-- Layout: vertical column, form controls aligned to the left with consistent width.
-- Decoration: subtle border, background, focus outlines.
+Decoration: لون مستوحى من ألوان برشلونة (أحمر وأزرق)، مسافات واضحة، خط نظيف
 
-2. Planning
-- HTML elements: use `form` element with `label`, `input`, `textarea`, and `button`.
-- Groupings: `.form-group` wrapping each label + control pair; intro text in `.form-header`.
-- Layout method: normal block flow for stacking, with max-width to keep the form compact.
+2️⃣ Hero Section – Analysis
 
-3. Chunking
-- Parent container: `.form-component` and inner `.form-card`.
-- Sub-sections: `.form-header`, `.form-body`, `.form-actions`.
-- Reusable blocks: `.form-group` and `.form-control` classes for consistency across fields.
+Main Container:
 
-4. Prompting (Code Writing)
-- Add `for` and `id` attributes to connect labels and inputs for accessibility.
-- Use semantic `button type="submit"` and `required` on key fields.
-- Style inputs and buttons with consistent padding, borders, and focus states.
+Hero section لعرض المنتج الرئيسي
 
-5. Iterating
-- Increased spacing between `form-group` blocks and aligned labels to improve scanability.
-- Simplified class names for inputs (`.form-control`) to reuse styles.
-- Adjusted button width and alignment to visually match the card component’s buttons.
+Child Elements:
 
+صورة كبيرة لتيشيرت برشلونة الرسمي
 
-Component 4: IMAGE GALLERY
---------------------------
-1. Analysis
-- Main container: `section.gallery-component` with `.gallery-grid`.
-- Child elements: individual `.gallery-item` boxes with placeholder imagery and short captions.
-- Content: image alt text (descriptions) and captions.
-- Layout: responsive grid of equal-height cards that wrap on small screens.
-- Decoration: background color tiles, hover elevation, subtle border radius.
+Product title: FC Barcelona Home Jersey 2024/2025
 
-2. Planning
-- HTML elements: `figure` for each image tile with `div` as placeholder image and `figcaption` for text.
-- Groupings: `.gallery-grid` for all items, `.gallery-item` for each tile.
-- Layout method: CSS Grid for the gallery to auto-fit items and maintain equal spacing.
+Short description:
 
-3. Chunking
-- Parent container: `.gallery-component`.
-- Sub-sections: `.gallery-header`, `.gallery-grid`.
-- Reusable blocks: `.gallery-item`, `.gallery-placeholder`, `.gallery-caption`.
+Official home jersey designed for true Barcelona fans.
 
-4. Prompting (Code Writing)
-- Use `figure`/`figcaption` for semantic image blocks.
-- Apply CSS Grid with `repeat(auto-fit, minmax(...))` for responsiveness.
-- Use colored `.gallery-placeholder` divs as mock images.
+Call-to-Action button:
 
-5. Iterating
-- Increased grid gap and internal padding to prevent tiles from feeling crowded.
-- Unified placeholder aspect ratio and border radius with the card component.
-- Softened hover transform (`translateY`) so effects feel consistent and not jarring.
+Buy Now
 
-GLOBAL LAYOUT & ITERATION
--------------------------
-- Initial layout placed the sidebar and main content using Flexbox; refined to a CSS Grid with fixed sidebar width and fluid content.
-- Normalized typography, base colors, and spacing scale so all four components feel like part of one design system.
-- Final pass focused on consistent naming (`*-component`, `*-header`, `.btn`, `.badge`) and uniform spacing units (multiples of 0.25rem).
--->
+Content vs Layout vs Decoration:
+
+Content: صورة التيشيرت، اسم المنتج، الوصف، زر الشراء
+
+Layout: صورة على اليسار والنص على اليمين
+
+Decoration: إبراز الزر بلون واضح، حجم صورة كبير لجذب الانتباه
+
+3️⃣ Product Features – Analysis
+
+Main Container:
+
+Features section
+
+Child Elements (Features):
+
+Breathable Fabric
+
+Fabric allows airflow to keep you cool and comfortable.
+
+Official Club Design
+
+Authentic FC Barcelona colors and crest.
+
+Comfort Fit
+
+Designed for daily wear and match days.
+
+High Quality Material
+
+Durable fabric suitable for long-term use.
+
+Content vs Layout vs Decoration:
+
+Content: عناوين الميزات ووصفها
+
+Layout: عرض الميزات في Grid من 3–4 أعمدة
+
+Decoration: كروت بسيطة مع shadow خفيف و hover effect
+
+4️⃣ Product Details – Analysis
+
+Main Container:
+
+Product details section
+
+Child Elements:
+
+Long description:
+
+This FC Barcelona home t-shirt is made for fans who want comfort and style while supporting their team.
+
+Specifications list:
+
+Material: 100% Polyester
+
+Fit: Regular fit
+
+Available sizes: S, M, L, XL
+
+Color: Red and Blue
+
+Content vs Layout vs Decoration:
+
+Content: الوصف الطويل والمواصفات
+
+Layout: ترتيب عمودي لسهولة القراءة
+
+Decoration: مسافات واضحة بين النصوص والعناوين
+
+5️⃣ Pricing / Offer – Analysis
+
+Main Container:
+
+Pricing section
+
+Child Elements:
+
+Price: 79.99 USD
+
+CTA Button:
+
+Add to Cart
+
+Content vs Layout vs Decoration:
+
+Content: السعر وزر الشراء
+
+Layout: محتوى في المنتصف لجذب الانتباه
+
+Decoration: تكبير حجم السعر ولون مميز
+
+6️⃣ Footer – Analysis
+
+Main Container:
+
+Footer section
+
+Child Elements:
+
+Brand name: FC Barcelona Store
+
+Copyright:
+
+© 2025 FC Barcelona. All rights reserved.
+
+Useful links:
+
+Contact
+
+Privacy Policy
+
+FAQ
+
+Content vs Layout vs Decoration:
+
+Content: معلومات عامة وروابط
+
+Layout: ترتيب أفقي أو توسيط العناصر
+
+Decoration: خلفية داكنة ونص فاتح
+
+## Wireframe
+
+Header
+---------------------------------
+| FC Barcelona Shirt | Home Shop About |
+---------------------------------
+
+Hero Section
+---------------------------------
+| [ Product Image Large ]       |
+|                               |
+| Barcelona Home Jersey 24/25   |
+| Official Nike Shirt           |
+| [ Add to Cart ]               |
+---------------------------------
+
+Product Features
+---------------------------------
+| Feature 1 | Feature 2 | Feature 3 |
+| Breathable| Original  | Slim Fit  |
+---------------------------------
+
+Product Details
+---------------------------------
+| Product Details               |
+| - 100% Polyester              |
+| - Official Club Logo          |
+| - Available Sizes: S–XL       |
+---------------------------------
+
+Pricing / Offer
+---------------------------------
+| Price: 79.99$                 |
+| Free Shipping                 |
+| [ Buy Now ]                   |
+---------------------------------
+
+Image Gallery
+---------------------------------
+| [Img] [Img] [Img] [Img]       |
+---------------------------------
+
+Footer
+---------------------------------
+| FC Barcelona © 2025           |
+| Contact | FAQ | Returns       |
+---------------------------------
+## Chunking
+
+### Header
+- Parent container: <header>
+- Sub-sections / Chunks:
+  1. Brand name: <div class="brand">FC Barcelona</div>
+  2. Navigation links: <nav><ul><li><a href="#features">Features</a></li>...</ul></nav>
+
+### Hero Section
+- Parent container: <section class="hero">
+- Sub-sections / Chunks:
+  1. Text container: <div class="hero-text">
+     - <h1> Product title
+     - <p> Short description
+     - <button> Call-to-Action
+  2. Image container: <div class="hero-image"><img src="assets/images/shirt-1.webp"></div>
+
+### Product Features
+- Parent container: <section class="features">
+- Sub-sections / Chunks:
+  - Features container: <div class="features-container">
+  - Feature cards: <div class="feature-card">
+    - <h3> Feature title
+    - <p> Short description
+
+### Product Details
+- Parent container: <section class="details">
+- Sub-sections / Chunks:
+  - Section title: <h2>
+  - Long description: <p>
+  - List of specifications: <ul><li>Material: 100% Polyester</li>...</ul>
+
+### Image Gallery
+- Parent container: <section class="gallery">
+- Sub-sections / Chunks:
+  - Grid container: <div class="gallery-grid">
+  - Images:
+    - <img src="assets/images/shirt-1.webp" alt="Front view of Barcelona T-shirt">
+    - <img src="assets/images/shirt-2.webp" alt="Back view of Barcelona T-shirt">
+    - <img src="assets/images/shirt-3.webp" alt="Detail view of Barcelona T-shirt">
+    - <img src="assets/images/shirt-4.jpg" alt="Barcelona T-shirt on model">
+
+### Pricing / Offer
+- Parent container: <section class="pricing">
+- Sub-sections / Chunks:
+  - Price display: <p class="price">79.99$</p>
+  - CTA button: <button>Add to Cart</button>
+
+### Footer
+- Parent container: <footer>
+- Sub-sections / Chunks:
+  - Brand / store name: <div class="brand">FC Barcelona Store</div>
+  - Copyright: <p>© 2025 FC Barcelona</p>
+  - Useful links: <ul><li><a href="#">Contact</a></li>...</ul>
+
+Iteration Notes
+
+Header
+
+عدلت المسافات بين اسم النادي والروابط لتكون متساوية وواضحة
+
+حسّنت الخط ليكون أسهل للقراءة على جميع الشاشات
+
+Hero Section
+
+زدت حجم الصورة لتظهر تفاصيل التيشيرت بوضوح
+
+غيرت لون زر الشراء ليكون بارز وواضح للزائر
+
+Product Features
+
+أعدت ترتيب الكروت بحيث تكون متساوية العرض
+
+أضفت Shadow خفيف على الكروت عند مرور الماوس Hover effect
+
+Product Details
+
+حسّنت تباعد الأسطر بين النقاط لتسهيل القراءة
+
+عدلت حجم الخط للقائمة لتكون متناسقة مع نص الوصف
+
+Image Gallery
+
+عدلت Grid Layout لتكون 2×2 على الديسكتوب وعمود واحد على الموبايل
+
+أضفت Hover effect على الصور لتكبير بسيط عند المرور عليها
+
+Pricing / Offer
+
+وسّطت السعر وزر الشراء على الصفحة
+
+عدلت لون الزر ليكون متناسق مع ألوان نادي برشلونة (أحمر/أزرق)
+
+Footer
+
+حسّنت توزيع الروابط والأيقونات
+
+عدلت المسافات ليكون Footer منظم وواضح
+
+مرة اخرى عدلت لون خلفية الهيدر وخليته ازرق ممزوج بالاحمر 
+وعدلت ايضا خلفية في الهيرو سكشن وجعلتها تغطي كامل الهيرو سيكشن وجعلتها شفافة 
+وايضا عدلت لون خلفية الفيتشرز وجعلته ازرق ممزوج بالاحمر نفس لون الهيدر  
+عدلت ايضا لون ديتيلز بروجكت الى لون اسود ممزوج بالازرق
+عدلت خلفية الصور وجعلتها نفس لون الهيدر وايضا عدلت عليها وجعلتها لصور الأربعة: تظهر مباشرة جنباً إلى جنب في   صف واحد واضفت عليها السكرول التلقائي: يتحرك أتوماتيكياً يمين ويسار بسلاسة
+وغيرت خلفية السعر نفس لون الهيدر ايضا وغير ت السعر الى 30 دينار اردني واضفت اضف الى السلة وتختار اسم لاعب الي الي بدك اياه على تيشيرت ورقم الي بدك اياه ايضا 
+واخر اشي اضفت الشعار الخاص في النادي الى الهيدر 
+

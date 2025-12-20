@@ -1,330 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>UI Components Homework – Card, Sidebar, Form, Gallery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona Home Jersey 2024/2025 - Product Details</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<!-- 
-WORKFLOW NOTES
-================
-
-Component 1: CARD
------------------
-1. Analysis
-- Main container: `.card` wrapping the entire card.
-- Child elements: image placeholder, title, supporting text, tag chips, primary and secondary buttons.
-- Content: title text, body text, button labels.
-- Layout: vertical stacking, spacing between sections, alignment of buttons in a row.
-- Decoration: background color, border radius, drop shadow, hover states, tag chip colors.
-
-2. Planning
-- HTML elements: use `section.card-component` as a semantic region; inside use `article.card` for the card itself.
-- Groupings: header group (`.card-media` for the image), body group (`.card-body` for title + text), footer group (`.card-footer` for tags and actions).
-- Layout method: Flexbox inside the footer to arrange buttons and tags; normal block flow for vertical stacking in the card.
-
-3. Chunking
-- Parent container: `.card-component` (component wrapper) and `.card` (visual card box).
-- Sub-sections: `.card-media`, `.card-body`, `.card-footer`.
-- Reusable blocks: `.badge` for small label chips, `.btn` for buttons.
-
-4. Prompting (Code Writing)
-- Use semantic HTML: `section` with `h2` for the component heading, `article` for the card.
-- Add meaningful class names like `.card-title`, `.card-text`, `.card-actions`.
-- Style with clean CSS using Flexbox for footer alignment, padding for spacing, and consistent typography.
-
-5. Iterating
-- After first version, increased card padding and line-height for better readability.
-- Adjusted button spacing and used a shared `.btn` class for consistency.
-- Tweaked shadow and border radius to make the card feel more polished and professional.
-
-
-Component 2: SIDEBAR
---------------------
-1. Analysis
-- Main container: `aside.sidebar` containing navigation and info.
-- Child elements: logo/title, navigation list with links, section heading, small summary text, and a call-to-action button.
-- Content: app name, nav labels, descriptive text.
-- Layout: vertical stack of logo, nav, info block, and button.
-- Decoration: background color panel, divider lines, hover states for links.
-
-2. Planning
-- HTML elements: use `aside` for semantic sidebar, `nav` for navigation, `ul`/`li` for menu items, and `a` for links.
-- Groupings: `.sidebar-header` for title, `.sidebar-nav` for the main menu, `.sidebar-footer` for help text and action button.
-- Layout method: Flexbox column layout for the sidebar; spacing via `gap` and margins.
-
-3. Chunking
-- Parent container: `.sidebar-component` wrapping `aside.sidebar`.
-- Sub-sections: `.sidebar-header`, `.sidebar-nav`, `.sidebar-footer`.
-- Reusable blocks: `.nav-link` style applied to all sidebar links.
-
-4. Prompting (Code Writing)
-- Use headings (`h2`, `h3`) to label the sidebar and navigation section.
-- Use clear class names like `.sidebar-title`, `.sidebar-menu`, `.nav-link`.
-- Style with Flexbox to push footer to the bottom and maintain even spacing.
-
-5. Iterating
-- Improved vertical rhythm by using `gap` instead of stacking many margins.
-- Lightened link hover background and added left border highlight for active state.
-- Normalized padding on the sidebar so content aligns visually with the main content area.
-
-
-Component 3: FORM
------------------
-1. Analysis
-- Main container: `section.form-component` with `.form-card` for visual form box.
-- Child elements: headings, input fields with labels, helper text, and a submit button.
-- Content: field labels, placeholder text, helper messages, and button label.
-- Layout: vertical column, form controls aligned to the left with consistent width.
-- Decoration: subtle border, background, focus outlines.
-
-2. Planning
-- HTML elements: use `form` element with `label`, `input`, `textarea`, and `button`.
-- Groupings: `.form-group` wrapping each label + control pair; intro text in `.form-header`.
-- Layout method: normal block flow for stacking, with max-width to keep the form compact.
-
-3. Chunking
-- Parent container: `.form-component` and inner `.form-card`.
-- Sub-sections: `.form-header`, `.form-body`, `.form-actions`.
-- Reusable blocks: `.form-group` and `.form-control` classes for consistency across fields.
-
-4. Prompting (Code Writing)
-- Add `for` and `id` attributes to connect labels and inputs for accessibility.
-- Use semantic `button type="submit"` and `required` on key fields.
-- Style inputs and buttons with consistent padding, borders, and focus states.
-
-5. Iterating
-- Increased spacing between `form-group` blocks and aligned labels to improve scanability.
-- Simplified class names for inputs (`.form-control`) to reuse styles.
-- Adjusted button width and alignment to visually match the card component’s buttons.
-
-
-Component 4: IMAGE GALLERY
---------------------------
-1. Analysis
-- Main container: `section.gallery-component` with `.gallery-grid`.
-- Child elements: individual `.gallery-item` boxes with placeholder imagery and short captions.
-- Content: image alt text (descriptions) and captions.
-- Layout: responsive grid of equal-height cards that wrap on small screens.
-- Decoration: background color tiles, hover elevation, subtle border radius.
-
-2. Planning
-- HTML elements: `figure` for each image tile with `div` as placeholder image and `figcaption` for text.
-- Groupings: `.gallery-grid` for all items, `.gallery-item` for each tile.
-- Layout method: CSS Grid for the gallery to auto-fit items and maintain equal spacing.
-
-3. Chunking
-- Parent container: `.gallery-component`.
-- Sub-sections: `.gallery-header`, `.gallery-grid`.
-- Reusable blocks: `.gallery-item`, `.gallery-placeholder`, `.gallery-caption`.
-
-4. Prompting (Code Writing)
-- Use `figure`/`figcaption` for semantic image blocks.
-- Apply CSS Grid with `repeat(auto-fit, minmax(...))` for responsiveness.
-- Use colored `.gallery-placeholder` divs as mock images.
-
-5. Iterating
-- Increased grid gap and internal padding to prevent tiles from feeling crowded.
-- Unified placeholder aspect ratio and border radius with the card component.
-- Softened hover transform (`translateY`) so effects feel consistent and not jarring.
-
-GLOBAL LAYOUT & ITERATION
--------------------------
-- Initial layout placed the sidebar and main content using Flexbox; refined to a CSS Grid with fixed sidebar width and fluid content.
-- Normalized typography, base colors, and spacing scale so all four components feel like part of one design system.
-- Final pass focused on consistent naming (`*-component`, `*-header`, `.btn`, `.badge`) and uniform spacing units (multiples of 0.25rem).
--->
-
 <body>
-  <div class="page-layout">
-    <!-- Sidebar Component -->
-    <section class="sidebar-component" aria-label="Sidebar component">
-      <aside class="sidebar">
-        <div class="sidebar-header">
-          <h1 class="sidebar-title">UI Starter</h1>
-          <p class="sidebar-subtitle">Component demo layout</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="brand">
+                <img src="assets/images/barcelona-logo.jpg.jpg" alt="FC Barcelona Logo" class="brand-logo">
+                <span class="brand-text">FC Barcelona</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <nav class="sidebar-nav" aria-label="Primary navigation">
-          <h2 class="sidebar-section-title">Components</h2>
-          <ul class="sidebar-menu">
-            <li><a class="nav-link" href="#card">Card</a></li>
-            <li><a class="nav-link" href="#form">Form</a></li>
-            <li><a class="nav-link" href="#gallery">Image Gallery</a></li>
-          </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-          <p class="sidebar-help">
-            Use this sidebar to jump between components on the page. This mimics a simple app shell.
-          </p>
-          <button class="btn btn-secondary" type="button">Sidebar Action</button>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">FC Barcelona Home Jersey 2024/2025</h1>
+                    <p class="hero-description">Official home jersey designed for true Barcelona fans.</p>
+                    <button class="cta-button hero-cta" id="buyButtonHero">Add to Cart</button>
+                </div>
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <img src="assets/images/shirt-1.webp.webp" alt="FC Barcelona Home Jersey 2024/2025" class="hero-image">
+                    </div>
+                </div>
+            </div>
         </div>
-      </aside>
     </section>
 
-    <!-- Main content area with Card, Form, Gallery -->
-    <main class="main-content">
-      <!-- Card Component -->
-      <section class="component card-component" id="card" aria-labelledby="card-heading">
-        <header class="component-header">
-          <h2 id="card-heading">Card Component</h2>
-          <p class="component-description">
-            A content card with a media area, title, text, tags, and primary / secondary actions.
-          </p>
-        </header>
-
-        <article class="card">
-          <div class="card-media" aria-hidden="true">
-            <div class="card-placeholder-image">Image</div>
-          </div>
-
-          <div class="card-body">
-            <h3 class="card-title">Modern UI Card</h3>
-            <p class="card-text">
-              This card groups related information into a single, scannable surface. Use it to highlight
-              important content, summaries, or actions.
-            </p>
-          </div>
-
-          <div class="card-footer">
-            <div class="card-meta">
-              <span class="badge badge-primary">Featured</span>
-              <span class="badge badge-neutral">Design System</span>
+    <!-- Product Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Breathable Fabric</h3>
+                    <p class="feature-description">Fabric allows airflow to keep you cool and comfortable.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Official Club Design</h3>
+                    <p class="feature-description">Authentic FC Barcelona colors and crest.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">Comfort Fit</h3>
+                    <p class="feature-description">Designed for daily wear and match days.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="feature-title">High Quality Material</h3>
+                    <p class="feature-description">Durable fabric suitable for long-term use.</p>
+                </div>
             </div>
-            <div class="card-actions">
-              <button class="btn btn-primary" type="button">View Details</button>
-              <button class="btn btn-ghost" type="button">Dismiss</button>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <!-- Form Component -->
-      <section class="component form-component" id="form" aria-labelledby="form-heading">
-        <header class="component-header">
-          <h2 id="form-heading">Form Component</h2>
-          <p class="component-description">
-            A simple contact form with labeled fields and a clear call-to-action button.
-          </p>
-        </header>
-
-        <div class="form-card">
-          <header class="form-header">
-            <h3 class="form-title">Contact Us</h3>
-            <p class="form-intro">
-              Fill out the fields below and we&apos;ll get back to you within one business day.
-            </p>
-          </header>
-
-          <form class="form-body" action="#" method="post">
-            <div class="form-group">
-              <label class="form-label" for="name">Full name</label>
-              <input
-                class="form-control"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email address</label>
-              <input
-                class="form-control"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="you@example.com"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="topic">Topic</label>
-              <input
-                class="form-control"
-                type="text"
-                id="topic"
-                name="topic"
-                placeholder="What can we help you with?"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="message">Message</label>
-              <textarea
-                class="form-control form-control-textarea"
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Write your message here"
-              ></textarea>
-              <p class="form-helper">Keep it short and clear so we can respond quickly.</p>
-            </div>
-
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Send Message</button>
-            </div>
-          </form>
         </div>
-      </section>
+    </section>
 
-      <!-- Image Gallery Component -->
-      <section class="component gallery-component" id="gallery" aria-labelledby="gallery-heading">
-        <header class="component-header">
-          <h2 id="gallery-heading">Image Gallery Component</h2>
-          <p class="component-description">
-            A responsive grid of image tiles using placeholder blocks to represent photos.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <header class="gallery-header">
-            <h3 class="gallery-title">Project Highlights</h3>
-            <p class="gallery-subtitle">
-              Each tile represents a sample project. On a real site, these would be actual images.
+    <!-- Product Details -->
+    <section class="details">
+        <div class="container">
+            <h2 class="section-title">Product Details</h2>
+            <p class="details-description">
+                This FC Barcelona home t-shirt is made for fans who want comfort and style while supporting their team.
             </p>
-          </header>
-
-          <div class="gallery-grid">
-            <figure class="gallery-item">
-              <div class="gallery-placeholder gallery-placeholder-blue" aria-hidden="true"></div>
-              <figcaption class="gallery-caption">Landing Page Concept</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-placeholder gallery-placeholder-green" aria-hidden="true"></div>
-              <figcaption class="gallery-caption">Analytics Dashboard</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-placeholder gallery-placeholder-purple" aria-hidden="true"></div>
-              <figcaption class="gallery-caption">Mobile App Wireframe</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-placeholder gallery-placeholder-orange" aria-hidden="true"></div>
-              <figcaption class="gallery-caption">E‑commerce Product Grid</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-placeholder gallery-placeholder-teal" aria-hidden="true"></div>
-              <figcaption class="gallery-caption">Profile UI</figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-placeholder gallery-placeholder-pink" aria-hidden="true"></div>
-              <figcaption class="gallery-caption">Marketing Hero Section</figcaption>
-            </figure>
-          </div>
+            <ul class="specifications-list">
+                <li><strong>Material:</strong> 100% Polyester</li>
+                <li><strong>Fit:</strong> Regular fit</li>
+                <li><strong>Available sizes:</strong> S, M, L, XL</li>
+                <li><strong>Color:</strong> Red and Blue</li>
+            </ul>
         </div>
-      </section>
-    </main>
-  </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-scroll-container" id="galleryScrollContainer">
+                <div class="gallery-images-wrapper">
+                    <div class="gallery-item">
+                        <img src="assets/images/shirt-1.webp.webp" alt="FC Barcelona Jersey - Front View" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/shirt-2.webp.webp" alt="FC Barcelona Jersey - Side View" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/shirt-3.webp.webp" alt="FC Barcelona Jersey - Detail View" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/shirt-4.jpg.jpg" alt="FC Barcelona Jersey - Full View" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Offer -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-content">
+                <p class="price">30 JOD</p>
+                <button class="cta-button pricing-cta" id="buyButton">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">FC Barcelona Store</div>
+                <div class="footer-copyright">© 2025 FC Barcelona</div>
+                <ul class="footer-links">
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Purchase Modal -->
+    <div class="purchase-modal" id="purchaseModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2 class="modal-title">تخصيص القميص</h2>
+            
+            <div class="modal-image">
+                <img src="assets/images/shirt-1.webp.webp" alt="FC Barcelona Jersey" id="modalShirtImage">
+            </div>
+            
+            <form class="purchase-form" id="purchaseForm">
+                <div class="form-group">
+                    <label for="jerseyNumber">رقم القميص:</label>
+                    <input type="number" id="jerseyNumber" name="jerseyNumber" min="1" max="99" required placeholder="أدخل الرقم (1-99)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="playerName">اسم اللاعب:</label>
+                    <input type="text" id="playerName" name="playerName" required placeholder="أدخل اسم اللاعب">
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">الكمية:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+                
+                <div class="price-summary" id="priceSummary">
+                    <div class="price-item">
+                        <span>السعر للقطعة الواحدة:</span>
+                        <span class="price-value">30 JOD</span>
+                    </div>
+                    <div class="total-price hidden" id="totalPrice">
+                        <span>السعر الإجمالي:</span>
+                        <span class="total-value">30 JOD</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-button">تأكيد الطلب</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
